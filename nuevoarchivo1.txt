@@ -1,0 +1,12 @@
+texto de prueba de archvo uno
+
+quantumbit
+linea agregada despues de comando git add
+
+linea nueva
+
+editado despues de add y antes de commit
+
+si
+
+ediatdo para ver diff
