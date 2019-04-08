@@ -10,3 +10,7 @@ editado despues de add y antes de commit
 si
 
 ediatdo para ver diff
+
+editado 2
+
+,,,
