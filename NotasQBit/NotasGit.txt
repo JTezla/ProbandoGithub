@@ -1,0 +1,15 @@
+Configurar usuario y correo por primera vez // Esto se hace una unica vez
+
+git config --global user.name "John Doe"
+git config --global user.email johndoe@example.com
+
+****************Clonar repositorio remoto existente
+// Crea carpeta oculta git para inicializar el proyecto en el directorio actual
+git clone git://github.com/schacon/grit.git
+
+
+//Al Clonar un repositorio se reinstalan carpetas faltantes
+/* Instalar dependencias faltantes con composer, crear archivo .env desde .env.example y generar key*/
+composer install
+copy .env.example .env
+php artisan key:generate

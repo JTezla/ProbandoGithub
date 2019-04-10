@@ -1,0 +1,73 @@
+﻿
+SELECT personas.nombre, juegos.titulo
+FROM personas
+INNER JOIN juegos ON personas.id = juegos.persona_id;
+
+SELECT personas.nombre ,COUNT(juegos.titulo) as 'Cantidad de Juegos'
+FROM personas
+INNER JOIN juegos ON personas.id = juegos.persona_id
+WHERE personas.nombre = 'Jose'
+GROUP BY personas.nombre
+
+NOTAS DE QUERY'S DE BASE DE DATOS
+****************** Insertar informacion en Base de Datos
+
+INSERT INTO *Nombre Tabla* (Atributo,Atributo2,Atributo3,...) 	// Se indica el orden de la entrada de datos
+VALUES ('String1','String2',numero,...)				// indicas el valor de cada casilla
+								//Nota: No comillas en el nombre de atributo
+**Ejemplo**
+INSERT INTO personas (nombre,apellido,correo,edad) 		
+VALUES ('roberto','Rob','rob@gmail.com',23) 			
+
+****************** Realizar consultas en Base de Datos
+SELECT column1, column2, ...  	//Nombre de columna a consultar (una o varias)(* significa todas las columnas)
+FROM table_name			//Nombre de la Tabla que contiene esas columnas
+WHERE condition;		//Condicion de la consulta (WHERE 1 u omitir WHERE significa consultar todo);
+				//Nota: No comillas en nombres de columna o tabla
+**Ejemplo**
+SELECT  nombre,correo 	
+FROM personas 
+WHERE edad<20 	
+
+			**********
+Realizar consultar de datos distintos en una columna
+SELECT DISTINCT columna FROM Tabla;
+**Ejemplo**
+SELECT DISTINCT edad FROM personas;
+****************** Editar informacion de Base de Datos
+UPDATE table_name
+SET column1 = value1, column2 = value2, ...
+WHERE condition;
+**Ejemplo**
+UPDATE personas 
+SET nombre='Poncho',edad=48 
+WHERE id=7;
+
+****************** Borrar informacion de Base de Datos
+DELETE FROM table_name WHERE condition; 
+
+**Ejemplo**
+DELETE FROM peronas WHERE id=3;	
+******************
+
+WHERE 				Condicion a cumplir
+WHERE NOT 			condicion a evitar
+WHERE edad IS NULL		campo a evaluar es nulo
+WHERE edad IS NOT NULL		campo a evaluar no es nulo
+AND 				juntar varias condiciones
+OR 				considerar varias condiciones
+ORDER BY nombre;		ordenar alfabeticamente
+ORDER BY nombre,apellido;	Segundo parametro para ordenar
+ORDER BY columna DESC 		Ordenar alfabeticamente orden descendiente
+MIN(edad)			funcion: el menor
+MAX(edad)			funcion: el mayor
+COUNT				funcion: cuenta cuantas casillas cumplen con la condicion
+AVG(edad)			funcion: calcular primedio
+SUM(edad)			funcion: suma columna
+LIKE '%a%'
+NOT LIKE 'a%'
+atributos para like
+	-'[acs]%'	comienza con cualquiera de las letras especificadas
+	-'[!abc]%'	no comienza con las letras a, b o c
+	-'[a-f]%'	comienza con cualquiera de las letras especificadas
+	-'_a%'		_ representa un espacio, que contiene en la segunda posicion la letra a
